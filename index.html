@@ -2,677 +2,669 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Encontro de Casais - Votação Romântica</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Configuração da Fonte Inter (padrão) -->
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encontro de Casais - Votação Romântica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração da Fonte Inter (padrão) -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-    body {
-      font-family: "Inter", sans-serif;
-      background-color: #f7f3f3;
-      /* Fundo suave */
-    }
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f7f3f3;
+            /* Fundo suave */
+        }
 
-    .main-bg {
-      background-color: #761213;
-      /* Bordô principal */
-    }
+        .main-bg {
+            background-color: #761213;
+            /* Bordô principal */
+        }
 
-    .text-accent {
-      color: #ffd700;
-      /* Dourado para destaque */
-    }
+        .text-accent {
+            color: #ffd700;
+            /* Dourado para destaque */
+        }
 
-    .border-accent {
-      border-color: #ffd700;
-    }
+        .border-accent {
+            border-color: #ffd700;
+        }
 
-    /* Efeito de brilho ao passar o mouse nos botões de voto */
-    .vote-btn:hover {
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
-      transform: translateY(-2px);
-    }
+        /* Efeito de brilho ao passar o mouse nos botões de voto */
+        .vote-btn:hover {
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+            transform: translateY(-2px);
+        }
 
-    .shadow-main {
-      box-shadow: 0 10px 20px -5px rgba(118, 18, 19, 0.4);
-    }
-  </style>
+        .shadow-main {
+            box-shadow: 0 10px 20px -5px rgba(118, 18, 19, 0.4);
+        }
+    </style>
 </head>
 
 <body>
-  <div id="app" class="min-h-screen flex flex-col items-center p-4">
-    <!-- Header Romântico -->
-    <header class="main-bg w-full rounded-b-3xl shadow-lg p-6 text-center mb-8">
-      <h1 class="text-4xl font-extrabold text-white tracking-tight">
-        <span class="text-accent">♥</span> Encontro de Casais
-        <span class="text-accent">♥</span>
-      </h1>
-      <p class="text-white mt-2 text-lg italic">
-        A Escolha dos Melhores Momentos
-      </p>
-    </header>
+    <div id="app" class="min-h-screen flex flex-col items-center p-4">
+        <!-- Header Romântico -->
+        <header class="main-bg w-full rounded-b-3xl shadow-lg p-6 text-center mb-8">
+            <h1 class="text-4xl font-extrabold text-white tracking-tight">
+                <span class="text-accent">♥</span> Encontro de Casais
+                <span class="text-accent">♥</span>
+            </h1>
+            <p class="text-white mt-2 text-lg italic">
+                A Escolha dos Melhores Momentos
+            </p>
+        </header>
 
-    <!-- Container Principal -->
-    <main class="w-full max-w-4xl bg-white p-6 md:p-10 rounded-xl shadow-2xl transition-all duration-500">
-      <!-- Tela de Loading/Notificação -->
-      <div id="statusMessage" class="text-center p-4 rounded-lg hidden transition-all duration-300"></div>
+        <!-- Container Principal -->
+        <main class="w-full max-w-4xl bg-white p-6 md:p-10 rounded-xl shadow-2xl transition-all duration-500">
+            <!-- Tela de Loading/Notificação -->
+            <div id="statusMessage" class="text-center p-4 rounded-lg hidden transition-all duration-300"></div>
 
-      <!-- 1. Tela de Login/Seleção de Casal -->
-      <div id="loginScreen" class="space-y-6">
-        <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">
-          Quem está votando?
-        </h2>
-        <div class="relative flex items-center justify-center">
-          <div class="absolute left-1/2 transform -translate-x-1/2 -top-10 text-6xl text-accent opacity-75">
-            <!-- Ícone de Aliança Simples SVG -->
-            <svg class="w-12 h-12 inline-block" fill="none" stroke="#FFD700" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 18h.01M16 16v2h2v-2h-2zm-6 0v2h2v-2h-2zm-6 0v2h2v-2h-2zm-6 0v2h2v-2h-2zm12-4h2m-2 0a4 4 0 100-8 4 4 0 000 8zm-6 0h2m-2 0a4 4 0 100-8 4 4 0 000 8z">
-              </path>
-            </svg>
-          </div>
-        </div>
+            <!-- 1. Tela de Login/Seleção de Casal -->
+            <div id="loginScreen" class="space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">
+                    Quem está votando?
+                </h2>
+                <div class="relative flex items-center justify-center">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 -top-10 text-6xl text-accent opacity-75">
+                        <!-- Ícone de Aliança Simples SVG -->
+                        <svg class="w-12 h-12 inline-block" fill="none" stroke="#FFD700" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 18h.01M16 16v2h2v-2h-2zm-6 0v2h2v-2h-2zm-6 0v2h2v-2h-2zm-6 0v2h2v-2h-2zm12-4h2m-2 0a4 4 0 100-8 4 4 0 000 8zm-6 0h2m-2 0a4 4 0 100-8 4 4 0 000 8z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
 
-        <label for="coupleSelect" class="block text-lg font-medium text-gray-700">Selecione seu Casal:</label>
-        <select id="coupleSelect"
-          class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-2 border-gray-300 focus:outline-none focus:ring-4 focus:ring-red-200 focus:border-red-400 sm:text-lg rounded-xl transition duration-200">
-          <!-- Opções serão preenchidas via JS -->
-        </select>
+                <label for="coupleSelect" class="block text-lg font-medium text-gray-700">Selecione seu Casal:</label>
+                <select id="coupleSelect"
+                    class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-2 border-gray-300 focus:outline-none focus:ring-4 focus:ring-red-200 focus:border-red-400 sm:text-lg rounded-xl transition duration-200">
+                    <!-- Opções serão preenchidas via JS -->
+                </select>
 
-        <div id="adminPasswordInput" class="hidden mt-4 space-y-4">
-          <label for="adminPassword" class="block text-lg font-medium text-gray-700">Senha de Acesso ao Ranking:</label>
-          <input type="password" id="adminPassword" placeholder="Digite a senha"
-            class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-2 border-gray-300 focus:outline-none focus:ring-4 focus:ring-red-200 focus:border-red-400 sm:text-lg rounded-xl transition duration-200" />
-        </div>
+                <div id="adminPasswordInput" class="hidden mt-4 space-y-4">
+                    <label for="adminPassword" class="block text-lg font-medium text-gray-700">Senha de Acesso ao
+                        Ranking:</label>
+                    <input type="password" id="adminPassword" placeholder="Digite a senha"
+                        class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-2 border-gray-300 focus:outline-none focus:ring-4 focus:ring-red-200 focus:border-red-400 sm:text-lg rounded-xl transition duration-200" />
+                </div>
 
-        <button id="loginButton"
-          class="w-full py-3 bg-red-600 main-bg text-white text-xl font-semibold rounded-xl hover:bg-red-700 transition duration-300 shadow-main mt-8">
-          Entrar e Votar
-        </button>
-      </div>
+                <button id="loginButton"
+                    class="w-full py-3 bg-red-600 main-bg text-white text-xl font-semibold rounded-xl hover:bg-red-700 transition duration-300 shadow-main mt-8">
+                    Entrar e Votar
+                </button>
+            </div>
 
-      <!-- 2. Tela de Votação -->
-      <div id="votingScreen" class="hidden">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">
-          Olá, <span id="voterNameDisplay" class="text-main-bg">Casal</span>!
-        </h2>
-        <div id="currentVotingBlock">
-          <!-- Blocos de votação serão renderizados aqui -->
-        </div>
+            <!-- 2. Tela de Votação -->
+            <div id="votingScreen" class="hidden">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">
+                    Olá, <span id="voterNameDisplay" class="text-main-bg">Casal</span>!
+                </h2>
+                <div id="currentVotingBlock">
+                    <!-- Blocos de votação serão renderizados aqui -->
+                </div>
 
-        <p id="votingTimeMessage"
-          class="text-center text-xl font-semibold mt-6 p-4 rounded-lg border-l-4 border-red-500 bg-red-50 text-red-700">
-        </p>
+                <p id="votingTimeMessage"
+                    class="text-center text-xl font-semibold mt-6 p-4 rounded-lg border-l-4 border-red-500 bg-red-50 text-red-700">
+                </p>
 
-        <button onclick="renderRankingScreen()" id="viewRankingButton"
-          class="hidden w-full py-3 mt-8 bg-red-500 text-white text-xl font-semibold rounded-xl hover:bg-red-600 transition duration-300">
-          Ver Ranking (Admin)
-        </button>
-      </div>
+                <button onclick="renderRankingScreen()" id="viewRankingButton"
+                    class="hidden w-full py-3 mt-8 bg-red-500 text-white text-xl font-semibold rounded-xl hover:bg-red-600 transition duration-300">
+                    Ver Ranking (Admin)
+                </button>
+            </div>
 
-      <!-- 3. Tela de Ranking -->
-      <div id="rankingScreen" class="hidden">
-        <h2 class="text-3xl font-bold text-center text-main-bg mb-4">
-          Placar Oficial (Domingo)
-        </h2>
-        <p class="text-center text-gray-600 mb-8 italic">
-          Vencedores por Categoria e Campeão Geral
-        </p>
+            <!-- 3. Tela de Ranking -->
+            <div id="rankingScreen" class="hidden">
+                <h2 class="text-3xl font-bold text-center text-main-bg mb-4">
+                    Placar Oficial (Domingo)
+                </h2>
+                <p class="text-center text-gray-600 mb-8 italic">
+                    Vencedores por Categoria e Campeão Geral
+                </p>
 
-        <!-- Vencedor Geral -->
-        <div class="p-6 main-bg text-white rounded-xl mb-8 text-center shadow-lg">
-          <h3 class="text-2xl font-bold mb-2">🏆 Casal Campeão Geral 🏆</h3>
-          <p id="overallWinner" class="text-4xl text-accent font-extrabold"></p>
-          <p id="overallVotes" class="mt-2 text-lg">Total de Votos: -</p>
-        </div>
+                <!-- Vencedor Geral -->
+                <div class="p-6 main-bg text-white rounded-xl mb-8 text-center shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2">🏆 Casal Campeão Geral 🏆</h3>
+                    <p id="overallWinner" class="text-4xl text-accent font-extrabold"></p>
+                    <p id="overallVotes" class="mt-2 text-lg">Total de Votos: -</p>
+                </div>
 
-        <!-- Vencedores por Categoria -->
-        <div id="categoryWinners" class="space-y-6">
-          <h3 class="text-2xl font-bold text-gray-800 border-b pb-2 mb-4">
-            Vencedores por Bloco
-          </h3>
-          <!-- Resultados por categoria serão injetados aqui -->
-        </div>
+                <!-- Vencedores por Categoria -->
+                <div id="categoryWinners" class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-800 border-b pb-2 mb-4">
+                        Vencedores por Bloco
+                    </h3>
+                    <!-- Resultados por categoria serão injetados aqui -->
+                </div>
 
-        <!-- Log de Votantes -->
-        <div class="mt-10 border-t pt-6">
-          <h3 class="text-2xl font-bold text-gray-800 mb-4">
-            Registro de Votantes por Bloco
-          </h3>
-          <ul id="votersLogList"
-            class="space-y-2 text-gray-700 max-h-96 overflow-y-auto p-2 border rounded-lg bg-gray-50">
-            <!-- Log de quem votou será injetado aqui -->
-          </ul>
-        </div>
+                <!-- Log de Votantes -->
+                <div class="mt-10 border-t pt-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                        Registro de Votantes por Bloco
+                    </h3>
+                    <ul id="votersLogList"
+                        class="space-y-2 text-gray-700 max-h-96 overflow-y-auto p-2 border rounded-lg bg-gray-50">
+                        <!-- Log de quem votou será injetado aqui -->
+                    </ul>
+                </div>
 
-        <button onclick="renderVotingScreen()"
-          class="w-full py-3 mt-8 bg-gray-300 text-gray-800 text-xl font-semibold rounded-xl hover:bg-gray-400 transition duration-300">
-          Voltar
-        </button>
-      </div>
+                <button onclick="renderVotingScreen()"
+                    class="w-full py-3 mt-8 bg-gray-300 text-gray-800 text-xl font-semibold rounded-xl hover:bg-gray-400 transition duration-300">
+                    Voltar
+                </button>
+            </div>
 
-      <!-- Modal para Mensagens/Alertas (Customizada) -->
-      <div id="customModal"
-        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-white p-8 rounded-xl max-w-sm w-full shadow-2xl transform transition-all">
-          <h3 id="modalTitle" class="text-2xl font-bold text-main-bg mb-4"></h3>
-          <p id="modalMessage" class="text-gray-700 mb-6"></p>
-          <button onclick="document.getElementById('customModal').classList.add('hidden')"
-            class="w-full py-2 bg-main-bg text-white font-semibold rounded-lg hover:opacity-90">
-            Entendi
-          </button>
-        </div>
-      </div>
-    </main>
-  </div>
+            <!-- Modal para Mensagens/Alertas (Customizada) -->
+            <div id="customModal"
+                class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+                <div class="bg-white p-8 rounded-xl max-w-sm w-full shadow-2xl transform transition-all">
+                    <h3 id="modalTitle" class="text-2xl font-bold text-main-bg mb-4"></h3>
+                    <p id="modalMessage" class="text-gray-700 mb-6"></p>
+                    <button onclick="document.getElementById('customModal').classList.add('hidden')"
+                        class="w-full py-2 bg-main-bg text-white font-semibold rounded-lg hover:opacity-90">
+                        Entendi
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
 
-  <script>
-    // -------------------------------
-    // CONFIGURAÇÕES IMPORTANTES (edite aqui)
-    // -------------------------------
-    const JSONBIN_MASTER_KEY =
-      "$2a$10$5MkP8u/0Aw44UKNpoB8BUOkAkRPRGOtsLwnCui5hJnuWP8ZeIbv9.";
-    const JSONBIN_BIN_ID = "6914f10fd0ea881f40e495c6";
+    <script>
+        // -------------------------------
+        // CONFIGURAÇÕES IMPORTANTES (edite aqui)
+        // -------------------------------
+        const JSONBIN_MASTER_KEY =
+            "$2a$10$5MkP8u/0Aw44UKNpoB8BUOkAkRPRGOtsLwnCui5hJnuWP8ZeIbv9.";
+        const JSONBIN_BIN_ID = "6914f10fd0ea881f40e495c6";
 
-    // -------------------------------
-    // Variáveis de aplicação
-    // -------------------------------
-    let selectedVoter = "";
-    let isAdmin = false;
-    let allVotes = [];
-    let voterLog = [];
-    let currentBlock = null;
-    let pollIntervalId = null;
+        // -------------------------------
+        // Variáveis de aplicação
+        // -------------------------------
+        let selectedVoter = "";
+        let isAdmin = false;
+        let allVotes = [];
+        let voterLog = [];
+        let currentBlock = null;
+        let pollIntervalId = null;
 
-    // ✅ NOVO: Carrinho de votos temporários
-    let tempVotes = {}; // { "categoria": "casal votado" }
+        // ✅ NOVO: Carrinho de votos temporários
+        let tempVotes = {}; // { "categoria": "casal votado" }
 
-    // ✅ Lista completa de casais
-    const allCouples = [
-      "Elmano e Ana",
-      "Joabe e Gleide",
-      "Salomão e Nildete",
-      "Bonfim e Celma",
-      "Marcio e Eliene",
-      "Eric e Andreara",
-      "Luciano e Evelin",
-      "Leonardo e Adriana",
-      "Lindomar e Paula",
-      "Marcão e Viviane",
-      "Frances e Silvana",
-      "Jaciano e Patricia",
-      "Nailton e Jacira",
-      "Fábio e Marlene",
-      "Elisangela e Claudio",
-      "Natã e Maila",
-      "Deri e Naiana",
-      "Paulo e Giselia",
-      "Tony e Adriana",
-      "Mateus e Barbara",
-      "Silvio e Jeane",
-      "Elmo e Talita",
-      "Moises e Joice",
-      "Uelington e Lve",
-      "Beto e Lais",
-      "Adilma e André",
-      "Giliane e Roberto",
-      "Sheila e Esposo",
-      "Gomes e Graça",
-      "Antônio e Jucineide",
-      "Alex e Lúcia",
-      "Tadeu e Elisamar"
-    ];
+        // ✅ Lista completa de casais
+        const allCouples = [
+            "Elmano e Ana",
+            "Joabe e Gleide",
+            "Salomão e Nildete",
+            "Bonfim e Celma",
+            "Marcio e Eliene",
+            "Eric e Andreara",
+            "Luciano e Evelin",
+            "Leonardo e Adriana",
+            "Lindomar e Paula",
+            "Marcão e Viviane",
+            "Frances e Silvana",
+            "Jaciano e Patricia",
+            "Nailton e Jacira",
+            "Fábio e Marlene",
+            "Elisangela e Claudio",
+            "Natã e Maila",
+            "Deri e Naiana",
+            "Paulo e Giselia",
+            "Tony e Adriana",
+            "Mateus e Barbara",
+            "Silvio e Jeane",
+            "Elmo e Talita",
+            "Moises e Joice",
+            "Uelington e Lve",
+            "Beto e Lais",
+            "Adilma e André",
+            "Giliane e Roberto",
+            "Sheila e Esposo",
+            "Gomes e Graça",
+            "Antônio e Jucineide",
+            "Alex e Lúcia",
+            "Tadeu e Elisamar"
+        ];
 
-    const adminCouples = ["Natã e Maila", "Joabe e Gleide"];
-    const adminPassword = "Cafeteira";
+        const adminCouples = ["Natã e Maila", "Joabe e Gleide"];
+        const adminPassword = "Cafeteira";
 
-    // 🧪 CONFIGURAÇÃO DE TESTE
-    // const categories = [
-    //   {
-    //     block: "Teste Completo",
-    //     day: 3,
-    //     timeStart: 0,
-    //     timeEnd: 23,
-    //     questions: [
-    //       "Casal mais engraçado",
-    //       "Casal mais comunicativo do café",
-    //       "Casal mais animado com o encontro",
-    //       "Casal mais comilão",
-    //       "Casal mais romântico",
-    //       "Casal mais elegante",
-    //       "Casal que mais demonstra amor em atitudes simples",
-    //       "Casal mais tranquilo e Sereno",
-    //       "Casal mais Apaixonado",
-    //       "Casal mais Carinhoso",
-    //       "Casal que demonstra a fé",
-    //       "Casal mais sorridente",
-    //       "Casal inspiração",
-    //       "Casal mais agradecido",
-    //       "Casal mais fotogênico do Encontro",
-    //       "Casal mais entrosado",
-    //     ],
-    //   },
-    // ];
-    const todayJSGetDay = (new Date()).getDay();
-    // Para teste
-    const categories_ = [
-      { block: "Sexta Manhã", day: todayJSGetDay, timeStart: 0, timeEnd: 23, questions: ["Casal mais engraçado", "Casal mais comunicativo do café", "Casal mais animado com o encontro", "Casal mais comilão"] },
-      { block: "Sexta Noite", day: todayJSGetDay, timeStart: 0, timeEnd: 23, questions: ["Casal mais romântico", "Casal mais elegante", "Casal que mais demonstra amor em atitudes simples", "Casal mais tranquilo e Sereno"] },
-      { block: "Sábado Manhã", day: todayJSGetDay, timeStart: 0, timeEnd: 23, questions: ["Casal mais Apaixonado", "Casal mais Carinhoso", "Casal que demonstra a fé", "Casal mais sorridente"] },
-      { block: "Sábado Noite", day: todayJSGetDay, timeStart: 0, timeEnd: 23, questions: ["Casal inspiração", "Casal mais agradecido", "Casal mais fotogênico do Encontro", "Casal mais entrosado"] }
-    ];
-    // Para produção 
+        // 🧪 CONFIGURAÇÃO DE TESTE
+        // const categories = [
+        //   {
+        //     block: "Teste Completo",
+        //     day: 3,
+        //     timeStart: 0,
+        //     timeEnd: 23,
+        //     questions: [
+        //       "Casal mais engraçado",
+        //       "Casal mais comunicativo do café",
+        //       "Casal mais animado com o encontro",
+        //       "Casal mais comilão",
+        //       "Casal mais romântico",
+        //       "Casal mais elegante",
+        //       "Casal que mais demonstra amor em atitudes simples",
+        //       "Casal mais tranquilo e Sereno",
+        //       "Casal mais Apaixonado",
+        //       "Casal mais Carinhoso",
+        //       "Casal que demonstra a fé",
+        //       "Casal mais sorridente",
+        //       "Casal inspiração",
+        //       "Casal mais agradecido",
+        //       "Casal mais fotogênico do Encontro",
+        //       "Casal mais entrosado",
+        //     ],
+        //   },
+        // ];
+        const todayJSGetDay = (new Date()).getDay();
+        // Para teste
+        // Para produção 
         const categories = [
-  { block: "Sexta Manhã", day: 5, timeStart: 7, timeEnd: 12,
-    questions: ["Casal mais engraçado", "Casal mais comunicativo do café", "Casal mais animado com o encontro", "Casal mais comilão"]
-  },
-
-  { block: "Sexta Noite", day: 5, timeStart: 17, timeEnd: 23,
-    questions: ["Casal mais romântico", "Casal mais elegante", "Casal que mais demonstra amor em atitudes simples", "Casal mais tranquilo e Sereno"]
-  },
-
-  { block: "Sábado Manhã", day: 6, timeStart: 7, timeEnd: 12,
-    questions: ["Casal mais Apaixonado", "Casal mais Carinhoso", "Casal que demonstra a fé", "Casal mais sorridente"]
-  },
-
-  { block: "Sábado Noite", day: 6, timeStart: 17, timeEnd: 23,
-    questions: ["Casal inspiração", "Casal mais agradecido", "Casal mais fotogênico do Encontro", "Casal mais entrosado"]
-  }
-]
-    const rankingDay = 0;
-
-    // --- Referências DOM ---
-    const statusMessage = document.getElementById("statusMessage");
-    const loginScreen = document.getElementById("loginScreen");
-    const votingScreen = document.getElementById("votingScreen");
-    const rankingScreen = document.getElementById("rankingScreen");
-    const coupleSelect = document.getElementById("coupleSelect");
-    const loginButton = document.getElementById("loginButton");
-    const adminPasswordInput = document.getElementById("adminPasswordInput");
-    const adminPasswordElem = document.getElementById("adminPassword");
-    const voterNameDisplay = document.getElementById("voterNameDisplay");
-    const currentVotingBlockElem =
-      document.getElementById("currentVotingBlock");
-    const votingTimeMessageElem =
-      document.getElementById("votingTimeMessage");
-    const viewRankingButton = document.getElementById("viewRankingButton");
-    const customModal = document.getElementById("customModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalMessage = document.getElementById("modalMessage");
-
-    // --- Funções de UI ---
-    function showCustomModal(title, message) {
-      modalTitle.textContent = title;
-      modalMessage.textContent = message;
-      customModal.classList.remove("hidden");
-    }
-
-    function showStatusMessage(message, type = "info") {
-      statusMessage.textContent = message;
-      statusMessage.classList.remove(
-        "hidden",
-        "bg-red-50",
-        "text-red-700",
-        "bg-green-50",
-        "text-green-700",
-        "bg-blue-50",
-        "text-blue-700",
-        "border-red-500",
-        "border-green-500",
-        "border-blue-500"
-      );
-      if (type === "error") {
-        statusMessage.classList.add(
-          "bg-red-50",
-          "text-red-700",
-          "border-l-4",
-          "border-red-500"
-        );
-      } else if (type === "success") {
-        statusMessage.classList.add(
-          "bg-green-50",
-          "text-green-700",
-          "border-l-4",
-          "border-green-500"
-        );
-      } else {
-        statusMessage.classList.add(
-          "bg-blue-50",
-          "text-blue-700",
-          "border-l-4",
-          "border-blue-500"
-        );
-      }
-      setTimeout(() => statusMessage.classList.add("hidden"), 5000);
-    }
-
-    function changeScreen(screenId) {
-      loginScreen.classList.add("hidden");
-      votingScreen.classList.add("hidden");
-      rankingScreen.classList.add("hidden");
-      document.getElementById(screenId).classList.remove("hidden");
-    }
-
-    function populateCoupleSelect() {
-      coupleSelect.innerHTML = allCouples
-        .map((couple) => `<option value="${couple}">${couple}</option>`)
-        .join("");
-      coupleSelect.value = allCouples[0];
-    }
-
-    // -------------------------
-    // JSONBin Helpers
-    // -------------------------
-    async function fetchBinData() {
-      if (!JSONBIN_MASTER_KEY || !JSONBIN_BIN_ID) {
-        console.warn("JSONBin não configurado.");
-        return { votes: [], voters_log: [] };
-      }
-      try {
-        const res = await fetch(
-          `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`,
-          {
-            method: "GET",
-            headers: { "X-Master-Key": JSONBIN_MASTER_KEY },
-          }
-        );
-
-        if (!res.ok) {
-          console.error("Erro ao ler bin:", res.status);
-
-          showStatusMessage("Erro ao conectar com o servidor.", "error");
-          return { votes: [], voters_log: [] };
-        }
-
-        const json = await res.json();
-        console.log("fetchBinData response JSON:", json);
-        const record = json.record ;
-
-        return {
-          votes: Array.isArray(record.newData.votes) ? record.newData.votes : [],
-          voters_log: Array.isArray(record.newData.voters_log)
-            ? record.newData.voters_log
-            : [],
-        };
-      } catch (err) {
-        console.error("Erro fetchBinData:", err);
-        showStatusMessage("Não foi possível carregar os dados.", "error");
-        return { votes: [], voters_log: [] };
-      }
-    }
-
-
-    async function putBinData(newData) {
-      if (!JSONBIN_MASTER_KEY || !JSONBIN_BIN_ID) {
-        console.warn("JSONBin não configurado.");
-        return false;
-      }
-      try {
-        const res = await fetch(
-          `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-              "X-Master-Key": JSONBIN_MASTER_KEY,
+            {
+                block: "Sexta Manhã", day: 5, timeStart: 7, timeEnd: 12,
+                questions: ["Casal mais engraçado", "Casal mais comunicativo do café", "Casal mais animado com o encontro", "Casal mais comilão"]
             },
-            body: JSON.stringify({ newData }),
-          }
-        );
-        if (!res.ok) {
-          console.error("Erro ao atualizar bin:", res.status);
-          showStatusMessage("Erro ao salvar dados.", "error");
-          return false;
-        }
-        return true;
-      } catch (err) {
-        console.error("Erro putBinData:", err);
-        showStatusMessage("Não foi possível salvar.", "error");
-        return false;
-      }
-    }
 
-    async function startPollingBin(intervalMs = 5000) {
-      if (pollIntervalId) clearInterval(pollIntervalId);
-      await reloadDataFromBin();
-      pollIntervalId = setInterval(reloadDataFromBin, intervalMs);
-    }
+            {
+                block: "Sexta Noite", day: 5, timeStart: 17, timeEnd: 23,
+                questions: ["Casal mais romântico", "Casal mais elegante", "Casal que mais demonstra amor em atitudes simples", "Casal mais tranquilo e Sereno"]
+            },
 
-    async function reloadDataFromBin() {
-      const data = await fetchBinData();
-      // 🔍 DEBUG - APAGUE DEPOIS
-      console.log("📦 Dados carregados do JSONBin:", data);
-      console.log("📊 Total de votos:", data?.votes?.length || 0);
-      // FIM DEBUG
-      if (data) {
-        allVotes = Array.isArray(data.votes) ? data.votes : [];
-        voterLog = Array.isArray(data.voters_log) ? data.voters_log : [];
-        if (!rankingScreen.classList.contains("hidden")) {
-          renderRankingResults();
-        }
-      }
-    }
+            {
+                block: "Sábado Manhã", day: 6, timeStart: 7, timeEnd: 12,
+                questions: ["Casal mais Apaixonado", "Casal mais Carinhoso", "Casal que demonstra a fé", "Casal mais sorridente"]
+            },
 
-    // ✅ NOVA FUNÇÃO: Salvar todos os votos de uma vez
-    async function submitAllVotes() {
-      const votesToSubmit = Object.keys(tempVotes);
+            {
+                block: "Sábado Noite", day: 6, timeStart: 17, timeEnd: 23,
+                questions: ["Casal inspiração", "Casal mais agradecido", "Casal mais fotogênico do Encontro", "Casal mais entrosado"]
+            }
+        ]
+        const rankingDay = 0;
 
-      if (votesToSubmit.length === 0) {
-        showCustomModal(
-          "Nenhum Voto",
-          "Você precisa selecionar pelo menos um voto antes de enviar!"
-        );
-        return;
-      }
+        // --- Referências DOM ---
+        const statusMessage = document.getElementById("statusMessage");
+        const loginScreen = document.getElementById("loginScreen");
+        const votingScreen = document.getElementById("votingScreen");
+        const rankingScreen = document.getElementById("rankingScreen");
+        const coupleSelect = document.getElementById("coupleSelect");
+        const loginButton = document.getElementById("loginButton");
+        const adminPasswordInput = document.getElementById("adminPasswordInput");
+        const adminPasswordElem = document.getElementById("adminPassword");
+        const voterNameDisplay = document.getElementById("voterNameDisplay");
+        const currentVotingBlockElem =
+            document.getElementById("currentVotingBlock");
+        const votingTimeMessageElem =
+            document.getElementById("votingTimeMessage");
+        const viewRankingButton = document.getElementById("viewRankingButton");
+        const customModal = document.getElementById("customModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalMessage = document.getElementById("modalMessage");
 
-      try {
-        showStatusMessage(
-          `Enviando ${votesToSubmit.length} votos...`,
-          "info"
-        );
-
-        const data = (await fetchBinData()) || { votes: [], voters_log: [] };
-        if (!Array.isArray(data.votes)) data.votes = [];
-        if (!Array.isArray(data.voters_log)) data.voters_log = [];
-
-        const now = new Date();
-        let newVotesCount = 0;
-
-        // Adiciona cada voto
-        for (const category of votesToSubmit) {
-          const votedCouple = tempVotes[category];
-
-          // Verifica duplicidade
-          const existingVote = data.votes.find(
-            (v) => v.voterCouple === selectedVoter && v.category === category
-          );
-          if (existingVote) continue; // Pula votos duplicados
-
-          const voteObj = {
-            id: crypto.randomUUID
-              ? crypto.randomUUID()
-              : "v-" + Date.now() + "-" + Math.random(),
-            voterCouple: selectedVoter,
-            category: category,
-            votedCouple: votedCouple,
-            timestamp: now.toISOString(),
-          };
-          data.votes.push(voteObj);
-          newVotesCount++;
+        // --- Funções de UI ---
+        function showCustomModal(title, message) {
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+            customModal.classList.remove("hidden");
         }
 
-        // Atualiza log do bloco
-        if (newVotesCount > 0 && currentBlock) {
-          const logEntry = {
-            id: `${selectedVoter}-${currentBlock.block}`,
-            voterCouple: selectedVoter,
-            block: currentBlock.block,
-            timestamp: now.toISOString(),
-          };
-          data.voters_log = data.voters_log.filter(
-            (l) =>
-              !(
-                l.voterCouple === selectedVoter &&
-                l.block === currentBlock.block
-              )
-          );
-          data.voters_log.push(logEntry);
+        function showStatusMessage(message, type = "info") {
+            statusMessage.textContent = message;
+            statusMessage.classList.remove(
+                "hidden",
+                "bg-red-50",
+                "text-red-700",
+                "bg-green-50",
+                "text-green-700",
+                "bg-blue-50",
+                "text-blue-700",
+                "border-red-500",
+                "border-green-500",
+                "border-blue-500"
+            );
+            if (type === "error") {
+                statusMessage.classList.add(
+                    "bg-red-50",
+                    "text-red-700",
+                    "border-l-4",
+                    "border-red-500"
+                );
+            } else if (type === "success") {
+                statusMessage.classList.add(
+                    "bg-green-50",
+                    "text-green-700",
+                    "border-l-4",
+                    "border-green-500"
+                );
+            } else {
+                statusMessage.classList.add(
+                    "bg-blue-50",
+                    "text-blue-700",
+                    "border-l-4",
+                    "border-blue-500"
+                );
+            }
+            setTimeout(() => statusMessage.classList.add("hidden"), 5000);
         }
 
-        const ok = await putBinData({
-          votes: data.votes,
-          voters_log: data.voters_log,
-        });
-        if (!ok) {
-          showCustomModal(
-            "Erro",
-            "Não foi possível enviar os votos. Tente novamente."
-          );
-          return;
+        function changeScreen(screenId) {
+            loginScreen.classList.add("hidden");
+            votingScreen.classList.add("hidden");
+            rankingScreen.classList.add("hidden");
+            document.getElementById(screenId).classList.remove("hidden");
         }
 
-        showStatusMessage(
-          `✅ ${newVotesCount} votos enviados com sucesso!`,
-          "success"
-        );
+        function populateCoupleSelect() {
+            coupleSelect.innerHTML = allCouples
+                .map((couple) => `<option value="${couple}">${couple}</option>`)
+                .join("");
+            coupleSelect.value = allCouples[0];
+        }
 
-        // Atualiza estado local
-        allVotes = data.votes;
-        voterLog = data.voters_log;
-        tempVotes = {}; // Limpa carrinho
+        // -------------------------
+        // JSONBin Helpers
+        // -------------------------
+        async function fetchBinData() {
+            if (!JSONBIN_MASTER_KEY || !JSONBIN_BIN_ID) {
+                console.warn("JSONBin não configurado.");
+                return { votes: [], voters_log: [] };
+            }
+            try {
+                const res = await fetch(
+                    `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`,
+                    {
+                        method: "GET",
+                        headers: { "X-Master-Key": JSONBIN_MASTER_KEY },
+                    }
+                );
 
-        // ✅ Força reload dos dados
-        await reloadDataFromBin(); // ← Adicione esta linha
+                if (!res.ok) {
+                    console.error("Erro ao ler bin:", res.status);
 
-        renderVotingBlock();
-      } catch (error) {
-        console.error("Erro ao enviar votos:", error);
-        showCustomModal(
-          "Erro",
-          `Não foi possível enviar os votos. Detalhe: ${error.message}`
-        );
-      }
-    }
+                    showStatusMessage("Erro ao conectar com o servidor.", "error");
+                    return { votes: [], voters_log: [] };
+                }
 
-    // -------------------------
-    // Funções de tempo e render
-    // -------------------------
-    function getCurrentVotingBlock() {
-      const now = new Date();
-      const currentDay = now.getDay();
-      const currentHour = now.getHours();
+                const json = await res.json();
+                console.log("fetchBinData response JSON:", json);
+                const record = json.record;
 
-      // Procura blocos de votação primeiro
-      for (const blockData of categories) {
-        const isToday = blockData.day === currentDay;
-        if (isToday) {
-          const start = blockData.timeStart;
-          const end = blockData.timeEnd;
-          let isTimeValid = false;
-          if (start <= end) {
-            isTimeValid = currentHour >= start && currentHour <= end;
-          } else {
-            isTimeValid = currentHour >= start || currentHour <= end;
-          }
-          if (isTimeValid) {
+                return {
+                    votes: Array.isArray(record.newData.votes) ? record.newData.votes : [],
+                    voters_log: Array.isArray(record.newData.voters_log)
+                        ? record.newData.voters_log
+                        : [],
+                };
+            } catch (err) {
+                console.error("Erro fetchBinData:", err);
+                showStatusMessage("Não foi possível carregar os dados.", "error");
+                return { votes: [], voters_log: [] };
+            }
+        }
+
+
+        async function putBinData(newData) {
+            if (!JSONBIN_MASTER_KEY || !JSONBIN_BIN_ID) {
+                console.warn("JSONBin não configurado.");
+                return false;
+            }
+            try {
+                const res = await fetch(
+                    `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-Master-Key": JSONBIN_MASTER_KEY,
+                        },
+                        body: JSON.stringify({ newData }),
+                    }
+                );
+                if (!res.ok) {
+                    console.error("Erro ao atualizar bin:", res.status);
+                    showStatusMessage("Erro ao salvar dados.", "error");
+                    return false;
+                }
+                return true;
+            } catch (err) {
+                console.error("Erro putBinData:", err);
+                showStatusMessage("Não foi possível salvar.", "error");
+                return false;
+            }
+        }
+
+        async function startPollingBin(intervalMs = 5000) {
+            if (pollIntervalId) clearInterval(pollIntervalId);
+            await reloadDataFromBin();
+            pollIntervalId = setInterval(reloadDataFromBin, intervalMs);
+        }
+
+        async function reloadDataFromBin() {
+            const data = await fetchBinData();
+            // 🔍 DEBUG - APAGUE DEPOIS
+            console.log("📦 Dados carregados do JSONBin:", data);
+            console.log("📊 Total de votos:", data?.votes?.length || 0);
+            // FIM DEBUG
+            if (data) {
+                allVotes = Array.isArray(data.votes) ? data.votes : [];
+                voterLog = Array.isArray(data.voters_log) ? data.voters_log : [];
+                if (!rankingScreen.classList.contains("hidden")) {
+                    renderRankingResults();
+                }
+            }
+        }
+
+        // ✅ NOVA FUNÇÃO: Salvar todos os votos de uma vez
+        async function submitAllVotes() {
+            const votesToSubmit = Object.keys(tempVotes);
+
+            if (votesToSubmit.length === 0) {
+                showCustomModal(
+                    "Nenhum Voto",
+                    "Você precisa selecionar pelo menos um voto antes de enviar!"
+                );
+                return;
+            }
+
+            try {
+                showStatusMessage(
+                    `Enviando ${votesToSubmit.length} votos...`,
+                    "info"
+                );
+
+                const data = (await fetchBinData()) || { votes: [], voters_log: [] };
+                if (!Array.isArray(data.votes)) data.votes = [];
+                if (!Array.isArray(data.voters_log)) data.voters_log = [];
+
+                const now = new Date();
+                let newVotesCount = 0;
+
+                // Adiciona cada voto
+                for (const category of votesToSubmit) {
+                    const votedCouple = tempVotes[category];
+
+                    // Verifica duplicidade
+                    const existingVote = data.votes.find(
+                        (v) => v.voterCouple === selectedVoter && v.category === category
+                    );
+                    if (existingVote) continue; // Pula votos duplicados
+
+                    const voteObj = {
+                        id: crypto.randomUUID
+                            ? crypto.randomUUID()
+                            : "v-" + Date.now() + "-" + Math.random(),
+                        voterCouple: selectedVoter,
+                        category: category,
+                        votedCouple: votedCouple,
+                        timestamp: now.toISOString(),
+                    };
+                    data.votes.push(voteObj);
+                    newVotesCount++;
+                }
+
+                // Atualiza log do bloco
+                if (newVotesCount > 0 && currentBlock) {
+                    const logEntry = {
+                        id: `${selectedVoter}-${currentBlock.block}`,
+                        voterCouple: selectedVoter,
+                        block: currentBlock.block,
+                        timestamp: now.toISOString(),
+                    };
+                    data.voters_log = data.voters_log.filter(
+                        (l) =>
+                            !(
+                                l.voterCouple === selectedVoter &&
+                                l.block === currentBlock.block
+                            )
+                    );
+                    data.voters_log.push(logEntry);
+                }
+
+                const ok = await putBinData({
+                    votes: data.votes,
+                    voters_log: data.voters_log,
+                });
+                if (!ok) {
+                    showCustomModal(
+                        "Erro",
+                        "Não foi possível enviar os votos. Tente novamente."
+                    );
+                    return;
+                }
+
+                showStatusMessage(
+                    `✅ ${newVotesCount} votos enviados com sucesso!`,
+                    "success"
+                );
+
+                // Atualiza estado local
+                allVotes = data.votes;
+                voterLog = data.voters_log;
+                tempVotes = {}; // Limpa carrinho
+
+                // ✅ Força reload dos dados
+                await reloadDataFromBin(); // ← Adicione esta linha
+
+                renderVotingBlock();
+            } catch (error) {
+                console.error("Erro ao enviar votos:", error);
+                showCustomModal(
+                    "Erro",
+                    `Não foi possível enviar os votos. Detalhe: ${error.message}`
+                );
+            }
+        }
+
+        // -------------------------
+        // Funções de tempo e render
+        // -------------------------
+        function getCurrentVotingBlock() {
+            const now = new Date();
+            const currentDay = now.getDay();
+            const currentHour = now.getHours();
+
+            // Procura blocos de votação primeiro
+            for (const blockData of categories) {
+                const isToday = blockData.day === currentDay;
+                if (isToday) {
+                    const start = blockData.timeStart;
+                    const end = blockData.timeEnd;
+                    let isTimeValid = false;
+                    if (start <= end) {
+                        isTimeValid = currentHour >= start && currentHour <= end;
+                    } else {
+                        isTimeValid = currentHour >= start || currentHour <= end;
+                    }
+                    if (isToday && isTimeValid) {
+                        return {
+                            block: blockData.block,
+                            isOpen: true,
+                            message: `O bloco de votação "${blockData.block}" está ABERTO!`,
+                            currentBlockData: blockData,
+                        };
+                    }
+                }
+            }
+
+            // Verifica ranking
+            if (currentDay === rankingDay) {
+                return {
+                    block: "Ranking",
+                    isOpen: true,
+                    message: "A votação encerrou! O placar final está disponível.",
+                    currentBlockData: null,
+                };
+            }
+
             return {
-              block: blockData.block,
-              isOpen: true,
-              message: `O bloco de votação "${blockData.block}" está ABERTO!`,
-              currentBlockData: blockData,
+                block: "Fechado",
+                isOpen: false,
+                message: "A votação está fechada.",
+                currentBlockData: null,
             };
-          } else {
-            return {
-              block: blockData.block,
-              isOpen: false,
-              message: `O bloco "${blockData.block}" abre às ${start}:00h.`,
-              currentBlockData: blockData,
-            };
-          }
         }
-      }
 
-      // Verifica ranking
-      if (currentDay === rankingDay) {
-        return {
-          block: "Ranking",
-          isOpen: true,
-          message: "A votação encerrou! O placar final está disponível.",
-          currentBlockData: null,
-        };
-      }
-
-      return {
-        block: "Fechado",
-        isOpen: false,
-        message: "A votação está fechada.",
-        currentBlockData: null,
-      };
-    }
-
-    function renderVotingScreen() {
-      changeScreen("votingScreen");
-      renderVotingBlock();
-    }
-
-    function renderVotingBlock() {
-      currentBlock = getCurrentVotingBlock();
-      votingTimeMessageElem.textContent = currentBlock.message;
-      const blockData = currentBlock.currentBlockData;
-
-      // Caso ranking
-      if (currentBlock.block === "Ranking") {
-        currentVotingBlockElem.innerHTML = "";
-        if (isAdmin) {
-          renderRankingScreen();
-        } else {
-          currentVotingBlockElem.innerHTML = `<p class="text-xl text-center text-gray-500 mt-6">O Placar Final será exibido para a administração.</p>`;
+        function renderVotingScreen() {
+            changeScreen("votingScreen");
+            renderVotingBlock();
         }
-        return;
-      }
 
-      // Verifica se já votou em todas as categorias
-      if (currentBlock.isOpen && blockData) {
-        const totalQuestions = blockData.questions.length;
-        const votedQuestions = blockData.questions.filter((question) => {
-          return allVotes.some(
-            (v) => v.voterCouple === selectedVoter && v.category === question
-          );
-        }).length;
+        function renderVotingBlock() {
+            currentBlock = getCurrentVotingBlock();
+            votingTimeMessageElem.textContent = currentBlock.message;
+            const blockData = currentBlock.currentBlockData;
 
-        if (votedQuestions === totalQuestions) {
-          currentVotingBlockElem.innerHTML = `
+            // Caso ranking
+            if (currentBlock.block === "Ranking") {
+                currentVotingBlockElem.innerHTML = "";
+                if (isAdmin) {
+                    renderRankingScreen();
+                } else {
+                    currentVotingBlockElem.innerHTML = `<p class="text-xl text-center text-gray-500 mt-6">O Placar Final será exibido para a administração.</p>`;
+                }
+                return;
+            }
+
+            // Verifica se já votou em todas as categorias
+            if (currentBlock.isOpen && blockData) {
+                const totalQuestions = blockData.questions.length;
+                const votedQuestions = blockData.questions.filter((question) => {
+                    return allVotes.some(
+                        (v) => v.voterCouple === selectedVoter && v.category === question
+                    );
+                }).length;
+
+                if (votedQuestions === totalQuestions) {
+                    currentVotingBlockElem.innerHTML = `
             <div class="p-6 bg-green-50 rounded-xl border-2 border-green-300 text-center">
               <p class="text-2xl font-bold text-green-700">✅ Votação Concluída!</p>
               <p class="mt-2 text-lg text-green-600">Você já votou em todas as ${totalQuestions} categorias!</p>
             </div>
           `;
-          return;
-        }
+                    return;
+                }
 
-        // Conta votos temporários
-        const tempVotesCount = Object.keys(tempVotes).length;
+                // Conta votos temporários
+                const tempVotesCount = Object.keys(tempVotes).length;
 
-        // Bloco aberto
-        currentVotingBlockElem.innerHTML = `
+                // Bloco aberto
+                currentVotingBlockElem.innerHTML = `
           <div class="p-4 rounded-lg main-bg text-white text-center shadow-md mb-6">
             <h3 class="text-2xl font-bold">${blockData.block
-          } - Votação Aberta</h3>
+                    } - Votação Aberta</h3>
             <p class="text-sm">Selecione seus votos e clique em "Enviar" ao final!</p>
             <p class="text-xs mt-1 text-accent">Já enviados: ${votedQuestions}/${totalQuestions} | Selecionados: ${tempVotesCount}</p>
           </div>
           ${blockData.questions
-            .map((question) => renderCategoryVoting(question, blockData.block))
-            .join("")}
+                        .map((question) => renderCategoryVoting(question, blockData.block))
+                        .join("")}
           
           <button id="submitAllVotesBtn" onclick="submitAllVotes()" class="w-full py-4 mt-6 bg-accent text-main-bg text-2xl font-bold rounded-xl hover:opacity-90 transition duration-300 shadow-xl ${tempVotesCount === 0 ? "opacity-50 cursor-not-allowed" : ""
-          }">
+                    }">
             📤 Enviar ${tempVotesCount > 0 ? tempVotesCount : ""} Voto${tempVotesCount !== 1 ? "s" : ""
-          }
+                    }
           </button>
           
           <div class="p-4 bg-yellow-50 text-yellow-800 rounded-lg mt-4">
@@ -680,176 +672,176 @@
             <p class="text-sm">Selecione todos os votos que quiser e clique no botão "Enviar" no final!</p>
           </div>
         `;
-        return;
-      }
+                return;
+            }
 
-      // Bloco fechado
-      if (!currentBlock.isOpen) {
-        currentVotingBlockElem.innerHTML = `
+            // Bloco fechado
+            if (!currentBlock.isOpen) {
+                currentVotingBlockElem.innerHTML = `
           <div class="p-6 bg-red-50 rounded-xl border-2 border-red-300 text-center">
             <p class="text-2xl font-bold text-red-700">🔒 Bloco Fechado</p>
             <p class="mt-2 text-lg text-red-600">A votação não está disponível agora.</p>
           </div>
         `;
-      }
-    }
+            }
+        }
 
-    function renderCategoryVoting(category, blockName) {
-      // Verifica se já votou (salvo no servidor)
-      const existingVote = allVotes.find(
-        (v) => v.voterCouple === selectedVoter && v.category === category
-      );
-      const isVoted = !!existingVote;
-      const votedCoupleName = existingVote ? existingVote.votedCouple : "";
+        function renderCategoryVoting(category, blockName) {
+            // Verifica se já votou (salvo no servidor)
+            const existingVote = allVotes.find(
+                (v) => v.voterCouple === selectedVoter && v.category === category
+            );
+            const isVoted = !!existingVote;
+            const votedCoupleName = existingVote ? existingVote.votedCouple : "";
 
-      // Verifica se tem voto temporário
-      const tempVote = tempVotes[category];
+            // Verifica se tem voto temporário
+            const tempVote = tempVotes[category];
 
-      if (isVoted) {
-        // Já votou (mostra resultado fixo)
-        return `
+            if (isVoted) {
+                // Já votou (mostra resultado fixo)
+                return `
           <div class="border-2 border-green-300 bg-green-50 p-4 rounded-xl mb-4 shadow-sm">
             <h4 class="text-xl font-semibold text-main-bg mb-3">${category}</h4>
             <p class="text-green-700 font-bold text-lg">✅ Seu voto: ${votedCoupleName}</p>
           </div>
         `;
-      }
+            }
 
-      // Ainda não votou - permite seleção
-      const couplesOptions = allCouples
-        .filter((couple) => couple !== selectedVoter)
-        .map((couple) => {
-          const isSelected = tempVote === couple;
-          const btnClass = isSelected
-            ? "bg-accent text-main-bg border-2 border-main-bg shadow-xl font-bold"
-            : "bg-gray-100 text-gray-800 hover:bg-red-100 hover:text-main-bg transition duration-200";
-          const checkMark = isSelected ? "✅" : "";
-          return `<button data-couple="${couple}" data-category="${category}" class="vote-btn flex-grow py-2 px-3 m-1 text-sm rounded-lg font-medium ${btnClass}" onclick="selectVote('${category}', '${couple}')">${couple} ${checkMark}</button>`;
-        })
-        .join("");
+            // Ainda não votou - permite seleção
+            const couplesOptions = allCouples
+                .filter((couple) => couple !== selectedVoter)
+                .map((couple) => {
+                    const isSelected = tempVote === couple;
+                    const btnClass = isSelected
+                        ? "bg-accent text-main-bg border-2 border-main-bg shadow-xl font-bold"
+                        : "bg-gray-100 text-gray-800 hover:bg-red-100 hover:text-main-bg transition duration-200";
+                    const checkMark = isSelected ? "✅" : "";
+                    return `<button data-couple="${couple}" data-category="${category}" class="vote-btn flex-grow py-2 px-3 m-1 text-sm rounded-lg font-medium ${btnClass}" onclick="selectVote('${category}', '${couple}')">${couple} ${checkMark}</button>`;
+                })
+                .join("");
 
-      return `
+            return `
         <div class="border border-gray-200 p-4 rounded-xl mb-4 shadow-sm bg-white">
           <h4 class="text-xl font-semibold text-main-bg mb-3">${category}</h4>
           ${tempVote
-          ? `<p class="text-blue-600 font-bold mb-3">🔵 Selecionado: ${tempVote}</p>`
-          : `<p class="text-gray-600 mb-3">Selecione o casal:</p>`
-        }
+                    ? `<p class="text-blue-600 font-bold mb-3">🔵 Selecionado: ${tempVote}</p>`
+                    : `<p class="text-gray-600 mb-3">Selecione o casal:</p>`
+                }
           <div class="flex flex-wrap justify-start">${couplesOptions}</div>
         </div>
       `;
-    }
-
-    // ✅ NOVA FUNÇÃO: Selecionar voto (não salva ainda)
-    window.selectVote = function (category, votedCouple) {
-      if (votedCouple === selectedVoter) {
-        showCustomModal(
-          "Voto Inválido",
-          "Você não pode votar em seu próprio casal!"
-        );
-        return;
-      }
-
-      // Armazena no carrinho temporário
-      tempVotes[category] = votedCouple;
-
-      // Re-renderiza para mostrar seleção
-      renderVotingBlock();
-    };
-
-    window.submitAllVotes = submitAllVotes;
-
-    // -------------------------
-    // Ranking
-    // -------------------------
-    window.renderRankingScreen = async function () {
-      // ✅ FORÇA recarregar dados do JSONBin
-      showStatusMessage("Carregando ranking...", "info");
-      await reloadDataFromBin();
-
-      changeScreen("rankingScreen");
-
-      if (!isAdmin) {
-        const now = new Date();
-        if (now.getDay() !== rankingDay) {
-          showCustomModal(
-            "Acesso Restrito",
-            "O Ranking só está disponível no Domingo!"
-          );
-          changeScreen("votingScreen");
-          return;
         }
-      }
 
-      // ✅ Renderiza com os dados carregados
-      renderRankingResults();
-    };
-    function renderRankingResults() {
-      const categoryResults = {};
-      const overallVoteCount = {};
+        // ✅ NOVA FUNÇÃO: Selecionar voto (não salva ainda)
+        window.selectVote = function (category, votedCouple) {
+            if (votedCouple === selectedVoter) {
+                showCustomModal(
+                    "Voto Inválido",
+                    "Você não pode votar em seu próprio casal!"
+                );
+                return;
+            }
 
-      console.log("📊 Processando ranking com", allVotes.length, "votos");
+            // Armazena no carrinho temporário
+            tempVotes[category] = votedCouple;
 
-      // Processa todos os votos
-      allVotes.forEach((vote) => {
-        if (!categoryResults[vote.category])
-          categoryResults[vote.category] = {};
-        categoryResults[vote.category][vote.votedCouple] =
-          (categoryResults[vote.category][vote.votedCouple] || 0) + 1;
-        overallVoteCount[vote.votedCouple] =
-          (overallVoteCount[vote.votedCouple] || 0) + 1;
-      });
+            // Re-renderiza para mostrar seleção
+            renderVotingBlock();
+        };
 
-      // ✅ TABELA GERAL ESTILO BRASILEIRÃO
-      const sortedCouples = Object.entries(overallVoteCount)
-        .sort((a, b) => b[1] - a[1]) // Ordena por votos (maior primeiro)
-        .map(([couple, votes], index) => ({
-          position: index + 1,
-          couple: couple,
-          votes: votes,
-        }));
+        window.submitAllVotes = submitAllVotes;
 
-      // Se não tem votos, adiciona todos os casais com 0 votos
-      if (sortedCouples.length === 0) {
-        allCouples.forEach((couple, index) => {
-          sortedCouples.push({
-            position: index + 1,
-            couple: couple,
-            votes: 0,
-          });
-        });
-      } else {
-        // Adiciona casais que não receberam votos
-        allCouples.forEach((couple) => {
-          if (!overallVoteCount[couple]) {
-            sortedCouples.push({
-              position: sortedCouples.length + 1,
-              couple: couple,
-              votes: 0,
+        // -------------------------
+        // Ranking
+        // -------------------------
+        window.renderRankingScreen = async function () {
+            // ✅ FORÇA recarregar dados do JSONBin
+            showStatusMessage("Carregando ranking...", "info");
+            await reloadDataFromBin();
+
+            changeScreen("rankingScreen");
+
+            if (!isAdmin) {
+                const now = new Date();
+                if (now.getDay() !== rankingDay) {
+                    showCustomModal(
+                        "Acesso Restrito",
+                        "O Ranking só está disponível no Domingo!"
+                    );
+                    changeScreen("votingScreen");
+                    return;
+                }
+            }
+
+            // ✅ Renderiza com os dados carregados
+            renderRankingResults();
+        };
+        function renderRankingResults() {
+            const categoryResults = {};
+            const overallVoteCount = {};
+
+            console.log("📊 Processando ranking com", allVotes.length, "votos");
+
+            // Processa todos os votos
+            allVotes.forEach((vote) => {
+                if (!categoryResults[vote.category])
+                    categoryResults[vote.category] = {};
+                categoryResults[vote.category][vote.votedCouple] =
+                    (categoryResults[vote.category][vote.votedCouple] || 0) + 1;
+                overallVoteCount[vote.votedCouple] =
+                    (overallVoteCount[vote.votedCouple] || 0) + 1;
             });
-          }
-        });
-      }
 
-      // Define medalhas para top 3
-      const getMedal = (pos) => {
-        if (pos === 1) return "🥇";
-        if (pos === 2) return "🥈";
-        if (pos === 3) return "🥉";
-        return `${pos}º`;
-      };
+            // ✅ TABELA GERAL ESTILO BRASILEIRÃO
+            const sortedCouples = Object.entries(overallVoteCount)
+                .sort((a, b) => b[1] - a[1]) // Ordena por votos (maior primeiro)
+                .map(([couple, votes], index) => ({
+                    position: index + 1,
+                    couple: couple,
+                    votes: votes,
+                }));
 
-      const getRowClass = (pos, votes) => {
-        if (votes === 0) return "bg-gray-100 text-gray-400";
-        if (pos === 1)
-          return "bg-yellow-50 border-l-4 border-yellow-500 font-bold";
-        if (pos === 2) return "bg-gray-50 border-l-4 border-gray-400";
-        if (pos === 3) return "bg-orange-50 border-l-4 border-orange-400";
-        return "bg-white";
-      };
+            // Se não tem votos, adiciona todos os casais com 0 votos
+            if (sortedCouples.length === 0) {
+                allCouples.forEach((couple, index) => {
+                    sortedCouples.push({
+                        position: index + 1,
+                        couple: couple,
+                        votes: 0,
+                    });
+                });
+            } else {
+                // Adiciona casais que não receberam votos
+                allCouples.forEach((couple) => {
+                    if (!overallVoteCount[couple]) {
+                        sortedCouples.push({
+                            position: sortedCouples.length + 1,
+                            couple: couple,
+                            votes: 0,
+                        });
+                    }
+                });
+            }
 
-      // Monta HTML da tabela principal
-      const rankingTableHTML = `
+            // Define medalhas para top 3
+            const getMedal = (pos) => {
+                if (pos === 1) return "🥇";
+                if (pos === 2) return "🥈";
+                if (pos === 3) return "🥉";
+                return `${pos}º`;
+            };
+
+            const getRowClass = (pos, votes) => {
+                if (votes === 0) return "bg-gray-100 text-gray-400";
+                if (pos === 1)
+                    return "bg-yellow-50 border-l-4 border-yellow-500 font-bold";
+                if (pos === 2) return "bg-gray-50 border-l-4 border-gray-400";
+                if (pos === 3) return "bg-orange-50 border-l-4 border-orange-400";
+                return "bg-white";
+            };
+
+            // Monta HTML da tabela principal
+            const rankingTableHTML = `
     <div class="overflow-x-auto">
       <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
         <thead class="main-bg text-white">
@@ -861,90 +853,90 @@
         </thead>
         <tbody>
           ${sortedCouples
-          .map(
-            (item) => `
+                    .map(
+                        (item) => `
             <tr class="${getRowClass(
-              item.position,
-              item.votes
-            )} border-b border-gray-200 transition-all hover:bg-red-50">
+                            item.position,
+                            item.votes
+                        )} border-b border-gray-200 transition-all hover:bg-red-50">
               <td class="py-3 px-4 text-center font-bold text-lg">${getMedal(
-              item.position
-            )}</td>
+                            item.position
+                        )}</td>
               <td class="py-3 px-6 font-medium">${item.couple}</td>
               <td class="py-3 px-4 text-center font-bold text-xl ${item.votes > 0 ? "text-main-bg" : "text-gray-400"
-              }">${item.votes}</td>
+                            }">${item.votes}</td>
             </tr>
           `
-          )
-          .join("")}
+                    )
+                    .join("")}
         </tbody>
       </table>
     </div>
   `;
 
-      // ✅ Vencedor Geral
-      let overallWinnerCouple = "Nenhum Voto Registrado";
-      let maxOverallVotes = 0;
+            // ✅ Vencedor Geral
+            let overallWinnerCouple = "Nenhum Voto Registrado";
+            let maxOverallVotes = 0;
 
-      if (sortedCouples.length > 0 && sortedCouples[0].votes > 0) {
-        overallWinnerCouple = sortedCouples[0].couple;
-        maxOverallVotes = sortedCouples[0].votes;
+            if (sortedCouples.length > 0 && sortedCouples[0].votes > 0) {
+                overallWinnerCouple = sortedCouples[0].couple;
+                maxOverallVotes = sortedCouples[0].votes;
 
-        // Verifica empate no primeiro lugar
-        const topCouples = sortedCouples.filter(
-          (c) => c.votes === maxOverallVotes
-        );
-        if (topCouples.length > 1) {
-          overallWinnerCouple =
-            topCouples.map((c) => c.couple).join(", ") + " (Empate)";
-        }
-      }
-
-      document.getElementById("overallWinner").textContent =
-        overallWinnerCouple;
-      document.getElementById(
-        "overallVotes"
-      ).textContent = `Total de Votos: ${maxOverallVotes}`;
-
-      // ✅ Vencedores por CATEGORIA (não por bloco)
-      let categoryWinnersHTML =
-        '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
-
-      categories.forEach((blockData) => {
-        blockData.questions.forEach((category) => {
-          const votes = categoryResults[category] || {};
-          let winner = "Aguardando votos";
-          let maxVotes = 0;
-
-          Object.keys(votes).forEach((couple) => {
-            if (votes[couple] > maxVotes) {
-              maxVotes = votes[couple];
-              winner = couple;
-            } else if (votes[couple] === maxVotes && maxVotes > 0) {
-              if (!winner.includes(couple)) {
-                winner = `${winner}, ${couple}`;
-              }
+                // Verifica empate no primeiro lugar
+                const topCouples = sortedCouples.filter(
+                    (c) => c.votes === maxOverallVotes
+                );
+                if (topCouples.length > 1) {
+                    overallWinnerCouple =
+                        topCouples.map((c) => c.couple).join(", ") + " (Empate)";
+                }
             }
-          });
 
-          categoryWinnersHTML += `
+            document.getElementById("overallWinner").textContent =
+                overallWinnerCouple;
+            document.getElementById(
+                "overallVotes"
+            ).textContent = `Total de Votos: ${maxOverallVotes}`;
+
+            // ✅ Vencedores por CATEGORIA (não por bloco)
+            let categoryWinnersHTML =
+                '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+
+            categories.forEach((blockData) => {
+                blockData.questions.forEach((category) => {
+                    const votes = categoryResults[category] || {};
+                    let winner = "Aguardando votos";
+                    let maxVotes = 0;
+
+                    Object.keys(votes).forEach((couple) => {
+                        if (votes[couple] > maxVotes) {
+                            maxVotes = votes[couple];
+                            winner = couple;
+                        } else if (votes[couple] === maxVotes && maxVotes > 0) {
+                            if (!winner.includes(couple)) {
+                                winner = `${winner}, ${couple}`;
+                            }
+                        }
+                    });
+
+                    categoryWinnersHTML += `
         <div class="bg-white p-4 rounded-lg shadow-md border-l-4 ${maxVotes > 0 ? "border-accent" : "border-gray-300"
-            }">
+                        }">
           <p class="font-semibold text-sm text-gray-600 mb-1">${category}</p>
           <p class="font-bold text-lg ${maxVotes > 0 ? "text-main-bg" : "text-gray-400"
-            }">
+                        }">
             ${winner}
           </p>
           <p class="text-xs text-gray-500 mt-1">${maxVotes} voto${maxVotes !== 1 ? "s" : ""
-            }</p>
+                        }</p>
         </div>
       `;
-        });
-      });
-      categoryWinnersHTML += "</div>";
+                });
+            });
+            categoryWinnersHTML += "</div>";
 
-      // ✅ Atualiza DOM
-      document.getElementById("categoryWinners").innerHTML = `
+            // ✅ Atualiza DOM
+            document.getElementById("categoryWinners").innerHTML = `
     <h3 class="text-2xl font-bold text-gray-800 border-b pb-2 mb-6">🏆 Ranking Geral</h3>
     ${rankingTableHTML}
     
@@ -952,96 +944,95 @@
     ${categoryWinnersHTML}
   `;
 
-      // ✅ Log de votantes
-      const logListElem = document.getElementById("votersLogList");
-      if (voterLog.length > 0) {
-        const logHTML = voterLog
-          .slice()
-          .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-          .map((log) => {
-            const dt = new Date(log.timestamp);
-            const date = dt.toLocaleDateString("pt-BR");
-            const time = dt.toLocaleTimeString("pt-BR", {
-              hour: "2-digit",
-              minute: "2-digit",
+            // ✅ Log de votantes
+            const logListElem = document.getElementById("votersLogList");
+            if (voterLog.length > 0) {
+                const logHTML = voterLog
+                    .slice()
+                    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+                    .map((log) => {
+                        const dt = new Date(log.timestamp);
+                        const date = dt.toLocaleDateString("pt-BR");
+                        const time = dt.toLocaleTimeString("pt-BR", {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                        });
+                        return `<li class="p-2 bg-white rounded-md shadow-sm border-l-4 border-accent"><strong class="text-main-bg">${log.voterCouple}</strong> votou no bloco <span class="font-semibold">${log.block}</span> às ${time} em ${date}.</li>`;
+                    })
+                    .join("");
+                logListElem.innerHTML = logHTML;
+            } else {
+                logListElem.innerHTML =
+                    '<li class="text-center text-gray-500 italic">Nenhum registro de votante encontrado ainda.</li>';
+            }
+
+            // DEBUG
+            console.log("📊 Ranking renderizado!");
+            console.log("Total de votos processados:", allVotes.length);
+            console.log(
+                "Vencedor geral:",
+                overallWinnerCouple,
+                "com",
+                maxOverallVotes,
+                "votos"
+            );
+            console.log("Top 3:", sortedCouples.slice(0, 3));
+        }
+        // -------------------------
+        // Login / Inicialização
+        // -------------------------
+        window.handleLogin = async function () {
+            // ← Adiciona async
+            selectedVoter = coupleSelect.value;
+            voterNameDisplay.textContent = selectedVoter;
+
+            // ✅ CARREGA dados do JSONBin ANTES de renderizar
+            showStatusMessage("Carregando dados...", "info");
+            await reloadDataFromBin();
+
+            if (adminCouples.includes(selectedVoter)) {
+                isAdmin = true;
+                const enteredPassword = adminPasswordElem.value;
+                if (enteredPassword === adminPassword) {
+                    showStatusMessage(
+                        `Acesso Admin liberado para ${selectedVoter}.`,
+                        "success"
+                    );
+                    viewRankingButton.classList.remove("hidden");
+                    renderVotingScreen();
+                } else {
+                    showCustomModal(
+                        "Acesso Negado",
+                        "Senha incorreta. Você pode votar normalmente."
+                    );
+                    isAdmin = false;
+                    viewRankingButton.classList.add("hidden");
+                    renderVotingScreen();
+                }
+            } else {
+                isAdmin = false;
+                viewRankingButton.classList.add("hidden");
+                renderVotingScreen();
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            populateCoupleSelect();
+
+            coupleSelect.addEventListener("change", (e) => {
+                const selected = e.target.value;
+                if (adminCouples.includes(selected)) {
+                    adminPasswordInput.classList.remove("hidden");
+                } else {
+                    adminPasswordInput.classList.add("hidden");
+                    adminPasswordElem.value = "";
+                }
             });
-            return `<li class="p-2 bg-white rounded-md shadow-sm border-l-4 border-accent"><strong class="text-main-bg">${log.voterCouple}</strong> votou no bloco <span class="font-semibold">${log.block}</span> às ${time} em ${date}.</li>`;
-          })
-          .join("");
-        logListElem.innerHTML = logHTML;
-      } else {
-        logListElem.innerHTML =
-          '<li class="text-center text-gray-500 italic">Nenhum registro de votante encontrado ainda.</li>';
-      }
 
-      // DEBUG
-      console.log("📊 Ranking renderizado!");
-      console.log("Total de votos processados:", allVotes.length);
-      console.log(
-        "Vencedor geral:",
-        overallWinnerCouple,
-        "com",
-        maxOverallVotes,
-        "votos"
-      );
-      console.log("Top 3:", sortedCouples.slice(0, 3));
-    }
-    // -------------------------
-    // Login / Inicialização
-    // -------------------------
-    window.handleLogin = async function () {
-      // ← Adiciona async
-      selectedVoter = coupleSelect.value;
-      voterNameDisplay.textContent = selectedVoter;
-
-      // ✅ CARREGA dados do JSONBin ANTES de renderizar
-      showStatusMessage("Carregando dados...", "info");
-      await reloadDataFromBin();
-
-      if (adminCouples.includes(selectedVoter)) {
-        isAdmin = true;
-        const enteredPassword = adminPasswordElem.value;
-        if (enteredPassword === adminPassword) {
-          showStatusMessage(
-            `Acesso Admin liberado para ${selectedVoter}.`,
-            "success"
-          );
-          viewRankingButton.classList.remove("hidden");
-          renderVotingScreen();
-        } else {
-          showCustomModal(
-            "Acesso Negado",
-            "Senha incorreta. Você pode votar normalmente."
-          );
-          isAdmin = false;
-          viewRankingButton.classList.add("hidden");
-          renderVotingScreen();
-        }
-      } else {
-        isAdmin = false;
-        viewRankingButton.classList.add("hidden");
-        renderVotingScreen();
-      }
-    };
-
-    document.addEventListener("DOMContentLoaded", async () => {
-      populateCoupleSelect();
-
-      coupleSelect.addEventListener("change", (e) => {
-        const selected = e.target.value;
-        if (adminCouples.includes(selected)) {
-          adminPasswordInput.classList.remove("hidden");
-        } else {
-          adminPasswordInput.classList.add("hidden");
-          adminPasswordElem.value = "";
-        }
-      });
-
-      loginButton.addEventListener("click", handleLogin);
-      await startPollingBin(5000);
-    });
-  </script>
+            loginButton.addEventListener("click", handleLogin);
+            await startPollingBin(5000);
+        });
+    </script>
 </body>
 
 </html>
-
