@@ -1,0 +1,77 @@
+{
+  "record": {
+    "newData": {
+      "votes": [
+        /* Votos para Casal mais Romântico: Joabe e Gleide (7 votos) */
+        { "id": "rom-1", "voterCouple": "Elmano e Ana", "category": "Casal mais romântico", "votedCouple": "Joabe e Gleide", "timestamp": "2025-11-14T20:00:00.000Z" },
+        { "id": "rom-2", "voterCouple": "Salomão e Nildete", "category": "Casal mais romântico", "votedCouple": "Joabe e Gleide", "timestamp": "2025-11-14T20:01:00.000Z" },
+        { "id": "rom-3", "voterCouple": "Bonfim e Celma", "category": "Casal mais romântico", "votedCouple": "Joabe e Gleide", "timestamp": "2025-11-14T20:02:00.000Z" },
+        { "id": "rom-4", "voterCouple": "Marcio e Eliene", "category": "Casal mais romântico", "votedCouple": "Joabe e Gleide", "timestamp": "2025-11-14T20:03:00.000Z" },
+        { "id": "rom-5", "voterCouple": "Eric e Andreara", "category": "Casal mais romântico", "votedCouple": "Joabe e Gleide", "timestamp": "2025-11-14T20:04:00.000Z" },
+        { "id": "rom-6", "voterCouple": "Luciano e Evelin", "category": "Casal mais romântico", "votedCouple": "Joabe e Gleide", "timestamp": "2025-11-14T20:05:00.000Z" },
+        { "id": "rom-7", "voterCouple": "Leonardo e Adriana", "category": "Casal mais romântico", "votedCouple": "Joabe e Gleide", "timestamp": "2025-11-14T20:06:00.000Z" },
+
+        /* Votos para Casal mais Elegante: Lindomar e Paula (6 votos) */
+        { "id": "eleg-1", "voterCouple": "Lindomar e Paula", "category": "Casal mais elegante", "votedCouple": "Lindomar e Paula", "timestamp": "2025-11-14T20:07:00.000Z" },
+        { "id": "eleg-2", "voterCouple": "Marcão e Viviane", "category": "Casal mais elegante", "votedCouple": "Lindomar e Paula", "timestamp": "2025-11-14T20:08:00.000Z" },
+        { "id": "eleg-3", "voterCouple": "Frances e Silvana", "category": "Casal mais elegante", "votedCouple": "Lindomar e Paula", "timestamp": "2025-11-14T20:09:00.000Z" },
+        { "id": "eleg-4", "voterCouple": "Jaciano e Patricia", "category": "Casal mais elegante", "votedCouple": "Lindomar e Paula", "timestamp": "2025-11-14T20:10:00.000Z" },
+        { "id": "eleg-5", "voterCouple": "Nailton e Jacira", "category": "Casal mais elegante", "votedCouple": "Lindomar e Paula", "timestamp": "2025-11-14T20:11:00.000Z" },
+        { "id": "eleg-6", "voterCouple": "Fábio e Marlene", "category": "Casal mais elegante", "votedCouple": "Lindomar e Paula", "timestamp": "2025-11-14T20:12:00.000Z" },
+
+        /* Votos para Casal mais Tranquilo e Sereno: Nailton e Jacira (7 votos) */
+        { "id": "tranq-1", "voterCouple": "Elisangela e Claudio", "category": "Casal mais tranquilo e sereno", "votedCouple": "Nailton e Jacira", "timestamp": "2025-11-14T20:13:00.000Z" },
+        { "id": "tranq-2", "voterCouple": "Natã e Maila", "category": "Casal mais tranquilo e sereno", "votedCouple": "Nailton e Jacira", "timestamp": "2025-11-14T20:14:00.000Z" },
+        { "id": "tranq-3", "voterCouple": "Deri e Naiana", "category": "Casal mais tranquilo e sereno", "votedCouple": "Nailton e Jacira", "timestamp": "2025-11-14T20:15:00.000Z" },
+        { "id": "tranq-4", "voterCouple": "Paulo e Giselia", "category": "Casal mais tranquilo e sereno", "votedCouple": "Nailton e Jacira", "timestamp": "2025-11-14T20:16:00.000Z" },
+        { "id": "tranq-5", "voterCouple": "Tony e Adriana", "category": "Casal mais tranquilo e sereno", "votedCouple": "Nailton e Jacira", "timestamp": "2025-11-14T20:17:00.000Z" },
+        { "id": "tranq-6", "voterCouple": "Mateus e Barbara", "category": "Casal mais tranquilo e sereno", "votedCouple": "Nailton e Jacira", "timestamp": "2025-11-14T20:18:00.000Z" },
+        { "id": "tranq-7", "voterCouple": "Silvio e Jeane", "category": "Casal mais tranquilo e sereno", "votedCouple": "Nailton e Jacira", "timestamp": "2025-11-14T20:19:00.000Z" },
+
+        /* Votos para Casal que mais Demonstra Amor em Atitudes Simples: Paulo e Giselia (7 votos) */
+        { "id": "amor-1", "voterCouple": "Elmo e Talita", "category": "Casal que mais demonstra amor em atitudes simples", "votedCouple": "Paulo e Giselia", "timestamp": "2025-11-14T20:20:00.000Z" },
+        { "id": "amor-2", "voterCouple": "Moises e Joice", "category": "Casal que mais demonstra amor em atitudes simples", "votedCouple": "Paulo e Giselia", "timestamp": "2025-11-14T20:21:00.000Z" },
+        { "id": "amor-3", "voterCouple": "Uelington e Lve", "category": "Casal que mais demonstra amor em atitudes simples", "votedCouple": "Paulo e Giselia", "timestamp": "2025-11-14T20:22:00.000Z" },
+        { "id": "amor-4", "voterCouple": "Beto e Lais", "category": "Casal que mais demonstra amor em atitudes simples", "votedCouple": "Paulo e Giselia", "timestamp": "2025-11-14T20:23:00.000Z" },
+        { "id": "amor-5", "voterCouple": "Adilma e André", "category": "Casal que mais demonstra amor em atitudes simples", "votedCouple": "Paulo e Giselia", "timestamp": "2025-11-14T20:24:00.000Z" },
+        { "id": "amor-6", "voterCouple": "Giliane e Roberto", "category": "Casal que mais demonstra amor em atitudes simples", "votedCouple": "Paulo e Giselia", "timestamp": "2025-11-14T20:25:00.000Z" },
+        { "id": "amor-7", "voterCouple": "Sheila e Esposo", "category": "Casal que mais demonstra amor em atitudes simples", "votedCouple": "Paulo e Giselia", "timestamp": "2025-11-14T20:26:00.000Z" }
+      ],
+      "voters_log": [
+        /* Log dos 27 votos distintos: 7+7+6+7 */
+        { "id": "Elmano e Ana-Sexta Noite", "voterCouple": "Elmano e Ana", "block": "Sexta Noite", "timestamp": "2025-11-14T20:00:00.000Z" },
+        { "id": "Salomão e Nildete-Sexta Noite", "voterCouple": "Salomão e Nildete", "block": "Sexta Noite", "timestamp": "2025-11-14T20:01:00.000Z" },
+        { "id": "Bonfim e Celma-Sexta Noite", "voterCouple": "Bonfim e Celma", "block": "Sexta Noite", "timestamp": "2025-11-14T20:02:00.000Z" },
+        { "id": "Marcio e Eliene-Sexta Noite", "voterCouple": "Marcio e Eliene", "block": "Sexta Noite", "timestamp": "2025-11-14T20:03:00.000Z" },
+        { "id": "Eric e Andreara-Sexta Noite", "voterCouple": "Eric e Andreara", "block": "Sexta Noite", "timestamp": "2025-11-14T20:04:00.000Z" },
+        { "id": "Luciano e Evelin-Sexta Noite", "voterCouple": "Luciano e Evelin", "block": "Sexta Noite", "timestamp": "2025-11-14T20:05:00.000Z" },
+        { "id": "Leonardo e Adriana-Sexta Noite", "voterCouple": "Leonardo e Adriana", "block": "Sexta Noite", "timestamp": "2025-11-14T20:06:00.000Z" },
+        { "id": "Lindomar e Paula-Sexta Noite", "voterCouple": "Lindomar e Paula", "block": "Sexta Noite", "timestamp": "2025-11-14T20:07:00.000Z" },
+        { "id": "Marcão e Viviane-Sexta Noite", "voterCouple": "Marcão e Viviane", "block": "Sexta Noite", "timestamp": "2025-11-14T20:08:00.000Z" },
+        { "id": "Frances e Silvana-Sexta Noite", "voterCouple": "Frances e Silvana", "block": "Sexta Noite", "timestamp": "2025-11-14T20:09:00.000Z" },
+        { "id": "Jaciano e Patricia-Sexta Noite", "voterCouple": "Jaciano e Patricia", "block": "Sexta Noite", "timestamp": "2025-11-14T20:10:00.000Z" },
+        { "id": "Nailton e Jacira-Sexta Noite", "voterCouple": "Nailton e Jacira", "block": "Sexta Noite", "timestamp": "2025-11-14T20:11:00.000Z" },
+        { "id": "Fábio e Marlene-Sexta Noite", "voterCouple": "Fábio e Marlene", "block": "Sexta Noite", "timestamp": "2025-11-14T20:12:00.000Z" },
+        { "id": "Elisangela e Claudio-Sexta Noite", "voterCouple": "Elisangela e Claudio", "block": "Sexta Noite", "timestamp": "2025-11-14T20:13:00.000Z" },
+        { "id": "Natã e Maila-Sexta Noite", "voterCouple": "Natã e Maila", "block": "Sexta Noite", "timestamp": "2025-11-14T20:14:00.000Z" },
+        { "id": "Deri e Naiana-Sexta Noite", "voterCouple": "Deri e Naiana", "block": "Sexta Noite", "timestamp": "2025-11-14T20:15:00.000Z" },
+        { "id": "Paulo e Giselia-Sexta Noite", "voterCouple": "Paulo e Giselia", "block": "Sexta Noite", "timestamp": "2025-11-14T20:16:00.000Z" },
+        { "id": "Tony e Adriana-Sexta Noite", "voterCouple": "Tony e Adriana", "block": "Sexta Noite", "timestamp": "2025-11-14T20:17:00.000Z" },
+        { "id": "Mateus e Barbara-Sexta Noite", "voterCouple": "Mateus e Barbara", "block": "Sexta Noite", "timestamp": "2025-11-14T20:18:00.000Z" },
+        { "id": "Silvio e Jeane-Sexta Noite", "voterCouple": "Silvio e Jeane", "block": "Sexta Noite", "timestamp": "2025-11-14T20:19:00.000Z" },
+        { "id": "Elmo e Talita-Sexta Noite", "voterCouple": "Elmo e Talita", "block": "Sexta Noite", "timestamp": "2025-11-14T20:20:00.000Z" },
+        { "id": "Moises e Joice-Sexta Noite", "voterCouple": "Moises e Joice", "block": "Sexta Noite", "timestamp": "2025-11-14T20:21:00.000Z" },
+        { "id": "Uelington e Lve-Sexta Noite", "voterCouple": "Uelington e Lve", "block": "Sexta Noite", "timestamp": "2025-11-14T20:22:00.000Z" },
+        { "id": "Beto e Lais-Sexta Noite", "voterCouple": "Beto e Lais", "block": "Sexta Noite", "timestamp": "2025-11-14T20:23:00.000Z" },
+        { "id": "Adilma e André-Sexta Noite", "voterCouple": "Adilma e André", "block": "Sexta Noite", "timestamp": "2025-11-14T20:24:00.000Z" },
+        { "id": "Giliane e Roberto-Sexta Noite", "voterCouple": "Giliane e Roberto", "block": "Sexta Noite", "timestamp": "2025-11-14T20:25:00.000Z" },
+        { "id": "Sheila e Esposo-Sexta Noite", "voterCouple": "Sheila e Esposo", "block": "Sexta Noite", "timestamp": "2025-11-14T20:26:00.000Z" }
+      ]
+    }
+  },
+  "metadata": {
+    "id": "6914f10fd0ea881f40e495c6",
+    "private": true,
+    "createdAt": "2025-11-14T20:41:51.864Z"
+  }
+}
