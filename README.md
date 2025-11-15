@@ -8,3 +8,7 @@ https://api.jsonbin.io/v3/b/6914f10fd0ea881f40e495c6/10
 testar primeiro esse 
 
 https://api.jsonbin.io/v3/b/6914f10fd0ea881f40e495c6/latest
+
+testa esse agora 
+
+https://api.jsonbin.io/v3/b/6914f10fd0ea881f40e495c6/versions
